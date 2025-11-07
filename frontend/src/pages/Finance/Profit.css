@@ -1,0 +1,79 @@
+.profit-placeholder {
+  padding: 40px;
+  text-align: center;
+}
+
+.profit-placeholder h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.profit-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.summary-card {
+  background-color: #f9f9f9;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 30px;
+}
+
+.summary-card h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #666;
+}
+
+.summary-card .amount {
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+}
+
+.profit-card {
+  background-color: #e8f5e9;
+  border-color: #4caf50;
+}
+
+.profit-card .amount.profit {
+  color: #2e7d32;
+}
+
+.cost-breakdown {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.breakdown-section {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.breakdown-section h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.breakdown-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.breakdown-section li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+.breakdown-section li:last-child {
+  border-bottom: none;
+}

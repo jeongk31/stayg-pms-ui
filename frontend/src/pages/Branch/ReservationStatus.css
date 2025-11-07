@@ -1,0 +1,129 @@
+.reservation-status {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.status-nav {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #000;
+}
+
+.status-nav-item {
+  padding: 12px 30px;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  background-color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.status-nav-item:hover {
+  background-color: #f0f0f0;
+}
+
+.status-nav-item.active {
+  background-color: #ffeb3b;
+  border: 2px solid #000;
+  border-bottom: none;
+  position: relative;
+  bottom: -2px;
+}
+
+.status-content {
+  display: flex;
+  gap: 20px;
+}
+
+.status-sidebar {
+  width: 200px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 10;
+}
+
+.status-sidebar .sidebar-item {
+  padding: 12px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.status-sidebar .sidebar-item:hover {
+  background-color: #f0f0f0;
+}
+
+.status-sidebar .sidebar-item.active {
+  background-color: #ffeb3b;
+  font-weight: 600;
+}
+
+.status-main {
+  flex: 1;
+}
+
+.status-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.status-header h2 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.header-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.month-select,
+.project-input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.project-input {
+  width: 200px;
+}
+
+.reservation-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+}
+
+.reservation-table th,
+.reservation-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.reservation-table th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+}
+
+.reservation-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.reservation-table .occupancy {
+  font-weight: 600;
+  color: #d32f2f;
+}

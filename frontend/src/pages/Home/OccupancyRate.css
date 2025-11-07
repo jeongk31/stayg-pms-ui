@@ -1,0 +1,24 @@
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.export-btn {
+  padding: 8px 20px;
+  background-color: #fff;
+  border: 2px solid #000;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.export-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.occ-card .total {
+  font-weight: 600;
+  color: #d32f2f;
+}
