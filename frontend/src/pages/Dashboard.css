@@ -1,77 +1,88 @@
 .dashboard {
-  background-color: #fff;
+  background-color: var(--white);
   border-radius: 8px;
-  padding: 30px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
 }
 
 .content-section h2 {
   font-size: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   font-weight: 600;
+  color: var(--primary-navy);
 }
 
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 15px;
+  gap: 18px;
   margin-bottom: 30px;
 }
 
 .project-card {
-  border: 2px solid #000;
-  padding: 15px;
+  border: 1px solid var(--border-medium);
+  border-radius: 6px;
+  padding: 18px;
   text-decoration: none;
-  color: #333;
-  background-color: #fff;
-  transition: all 0.3s ease;
+  color: var(--text-primary);
+  background-color: var(--white);
+  transition: all 0.2s ease;
   cursor: pointer;
+  box-shadow: var(--shadow-sm);
 }
 
 .project-card:hover {
-  background-color: #f0f0f0;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  background-color: var(--light-cream);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-blue);
+  transform: translateY(-2px);
 }
 
 .project-header {
-  font-weight: bold;
+  font-weight: 600;
   font-size: 16px;
-  margin-bottom: 10px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid #ccc;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--accent-gold);
+  color: var(--primary-navy);
 }
 
 .project-detail {
   font-size: 14px;
-  margin: 5px 0;
+  margin: 6px 0;
+  color: var(--text-secondary);
 }
 
 .pagination {
   text-align: center;
   padding: 15px;
   font-size: 14px;
-  color: #666;
+  color: var(--text-secondary);
 }
 
 .comment-section {
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  padding: 15px;
-  margin-top: 20px;
+  background-color: var(--light-cream);
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  padding: 20px;
+  margin-top: 24px;
   font-size: 14px;
 }
 
 .comment-section strong {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   font-weight: 600;
+  color: var(--primary-navy);
 }
 
 .comment-section div {
-  margin: 5px 0;
+  margin: 6px 0;
+  color: var(--text-primary);
 }
 
 .comment-section p {
   margin-top: 10px;
-  color: #666;
+  color: var(--text-secondary);
 }
