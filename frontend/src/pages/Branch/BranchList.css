@@ -5,35 +5,6 @@
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.branch-nav {
-  display: flex;
-  gap: 2px;
-  margin-bottom: 30px;
-  border-bottom: 2px solid #000;
-}
-
-.branch-nav-item {
-  padding: 12px 30px;
-  border: 1px solid #ccc;
-  border-bottom: none;
-  background-color: #fff;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.branch-nav-item:hover {
-  background-color: #f0f0f0;
-}
-
-.branch-nav-item.active {
-  background-color: #ffeb3b;
-  border: 2px solid #000;
-  border-bottom: none;
-  position: relative;
-  bottom: -2px;
-}
-
 .search-box {
   display: flex;
   gap: 10px;

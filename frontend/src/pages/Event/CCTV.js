@@ -1,7 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './EventLog.css';
 
 const CCTV = () => {
+  const [searchExpanded, setSearchExpanded] = useState(false);
+  const [searchType, setSearchType] = useState('');
+  const [searchCity, setSearchCity] = useState('');
+  const [searchDistrict, setSearchDistrict] = useState('');
+  const [searchText, setSearchText] = useState('');
+  const [showResults, setShowResults] = useState(false);
+
+  const searchResults = [
+    { id: 1, name: '프로젝트 A - 그랜드 호텔', type: '호텔', city: '서울', district: '강남구' },
+    { id: 2, name: '프로젝트 B - 오션 펜션', type: '펜션', city: '강릉', district: '강동면' },
+    { id: 3, name: '프로젝트 C - 캠핑장', type: '캠핑', city: '양평', district: '서종면' },
+  ];
+
+  const handleSearch = () => {
+    setShowResults(true);
+  };
+
+  const selectProperty = (property) => {
+    setShowResults(false);
+    setSearchExpanded(false);
+  };
+
   const cctvEvents = [
     { no: 1, project: '프로젝트 A', date: '2025-01-15', event: '현금', video: '링크' },
     { no: 2, project: '프로젝트 B', date: '2025-01-14', event: '폭동', video: '링크' },
@@ -10,30 +32,111 @@ const CCTV = () => {
 
   return (
     <div className="event-log">
-      <div className="event-nav">
-        <button className="event-nav-item">이벤트</button>
-        <button className="event-nav-item">사용자 로그</button>
-        <button className="event-nav-item active">CCTV</button>
-      </div>
-
       <div className="event-content">
+        <div className="property-search-bar">
+          <button
+            className="search-toggle-btn"
+            onClick={() => setSearchExpanded(!searchExpanded)}
+          >
+            {searchExpanded ? '▲ 검색 닫기' : '▼ 프로젝트 검색'}
+          </button>
+
+          {searchExpanded && (
+            <div className="search-expanded">
+              <div className="search-filters">
+                <select
+                  className="search-filter-select"
+                  value={searchType}
+                  onChange={(e) => setSearchType(e.target.value)}
+                >
+                  <option value="">타입 선택</option>
+                  <option value="호텔">호텔</option>
+                  <option value="펜션">펜션</option>
+                  <option value="캠핑">캠핑</option>
+                  <option value="F&B">F&B</option>
+                  <option value="기타">기타</option>
+                </select>
+
+                <select
+                  className="search-filter-select"
+                  value={searchCity}
+                  onChange={(e) => setSearchCity(e.target.value)}
+                >
+                  <option value="">시 선택</option>
+                  <option value="서울">서울</option>
+                  <option value="강릉">강릉</option>
+                  <option value="양평">양평</option>
+                </select>
+
+                <select
+                  className="search-filter-select"
+                  value={searchDistrict}
+                  onChange={(e) => setSearchDistrict(e.target.value)}
+                >
+                  <option value="">구 선택</option>
+                  <option value="강남구">강남구</option>
+                  <option value="강동면">강동면</option>
+                  <option value="서종면">서종면</option>
+                </select>
+
+                <input
+                  type="text"
+                  className="search-text-input"
+                  placeholder="프로젝트명 검색"
+                  value={searchText}
+                  onChange={(e) => setSearchText(e.target.value)}
+                />
+
+                <button className="search-btn" onClick={handleSearch}>
+                  🔍
+                </button>
+              </div>
+
+              {showResults && (
+                <div className="search-results">
+                  {searchResults.map((result) => (
+                    <div
+                      key={result.id}
+                      className="search-result-item"
+                      onClick={() => selectProperty(result)}
+                    >
+                      <span className="result-name">{result.name}</span>
+                      <span className="result-details">{result.type} | {result.city} {result.district}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+
         <div className="event-header">
-          <h2>이벤트 &gt; CCTV</h2>
           <div className="search-controls">
             <select className="search-select">
-              <option>시 (드릴다운)</option>
+              <option>2023</option>
+              <option>2024</option>
+              <option>2025</option>
+              <option>2026</option>
             </select>
             <select className="search-select">
-              <option>구 (드릴다운)</option>
+              <option>1월</option>
+              <option>2월</option>
+              <option>3월</option>
+              <option>4월</option>
+              <option>5월</option>
+              <option>6월</option>
+              <option>7월</option>
+              <option>8월</option>
+              <option>9월</option>
+              <option>10월</option>
+              <option>11월</option>
+              <option>12월</option>
             </select>
             <select className="search-select">
-              <option>일자</option>
+              <option>일</option>
             </select>
             <select className="search-select">
               <option>이벤트</option>
-            </select>
-            <select className="search-select">
-              <option>프로젝트</option>
             </select>
             <div className="export-buttons">
               <button className="export-btn">출력</button>

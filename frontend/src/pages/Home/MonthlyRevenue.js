@@ -16,14 +16,7 @@ const MonthlyRevenue = () => {
 
   return (
     <div className="dashboard">
-      <div className="dashboard-nav">
-        <Link to="/home/realtime" className="dashboard-nav-item">실시간</Link>
-        <Link to="/home/monthly-revenue" className="dashboard-nav-item active">당월 누적매출</Link>
-        <Link to="/home/occupancy" className="dashboard-nav-item">OCC율</Link>
-      </div>
-
       <div className="content-section">
-        <h2>카테고리 &gt; 당월 누적매출</h2>
         <div className="projects-grid">
           {projects.map((project) => (
             <Link key={project.id} to={`/branch/pms/${project.id}`} className="project-card monthly-card">

@@ -8,6 +8,27 @@ const Revenue = () => {
   const [selectedMonth, setSelectedMonth] = useState(null);
   const [selectedYear, setSelectedYear] = useState('2025');
   const [selectedMonthForCompare, setSelectedMonthForCompare] = useState('2월');
+  const [searchExpanded, setSearchExpanded] = useState(false);
+  const [searchType, setSearchType] = useState('');
+  const [searchCity, setSearchCity] = useState('');
+  const [searchDistrict, setSearchDistrict] = useState('');
+  const [searchText, setSearchText] = useState('');
+  const [showResults, setShowResults] = useState(false);
+
+  const searchResults = [
+    { id: 1, name: '프로젝트 A - 그랜드 호텔', type: '호텔', city: '서울', district: '강남구' },
+    { id: 2, name: '프로젝트 B - 오션 펜션', type: '펜션', city: '강릉', district: '강동면' },
+    { id: 3, name: '프로젝트 C - 캠핑장', type: '캠핑', city: '양평', district: '서종면' },
+  ];
+
+  const handleSearch = () => {
+    setShowResults(true);
+  };
+
+  const selectProperty = (property) => {
+    setShowResults(false);
+    setSearchExpanded(false);
+  };
 
   const yearlyData = [
     { month: '1월', yanolja_m: 200000, yanolja_h: 3000000, yogiyo_h: 5800000, yogiyo_m: 8600000, naver: 11400000, agoda: 14200000, booking: 17000000, trip: 19800000, airbnb: 22600000, cash: 25400000, transfer: 28200000, card: 31000000, event: 33800000, total: 221000000 },
@@ -80,25 +101,86 @@ const Revenue = () => {
 
   return (
     <div className="finance-page">
-      <div className="finance-nav">
-        <Link to="/finance/revenue" className="finance-nav-item active">매출</Link>
-        <Link to="/finance/cost" className="finance-nav-item">원가</Link>
-        <Link to="/finance/cash-flow" className="finance-nav-item">자금 유동성</Link>
-      </div>
-
       <div className="finance-content">
+        <div className="property-search-bar">
+          <button
+            className="search-toggle-btn"
+            onClick={() => setSearchExpanded(!searchExpanded)}
+          >
+            {searchExpanded ? '▲ 검색 닫기' : '▼ 프로젝트 검색'}
+          </button>
+
+          {searchExpanded && (
+            <div className="search-expanded">
+              <div className="search-filters">
+                <select
+                  className="search-filter-select"
+                  value={searchType}
+                  onChange={(e) => setSearchType(e.target.value)}
+                >
+                  <option value="">타입 선택</option>
+                  <option value="호텔">호텔</option>
+                  <option value="펜션">펜션</option>
+                  <option value="캠핑">캠핑</option>
+                  <option value="F&B">F&B</option>
+                  <option value="기타">기타</option>
+                </select>
+
+                <select
+                  className="search-filter-select"
+                  value={searchCity}
+                  onChange={(e) => setSearchCity(e.target.value)}
+                >
+                  <option value="">시 선택</option>
+                  <option value="서울">서울</option>
+                  <option value="강릉">강릉</option>
+                  <option value="양평">양평</option>
+                </select>
+
+                <select
+                  className="search-filter-select"
+                  value={searchDistrict}
+                  onChange={(e) => setSearchDistrict(e.target.value)}
+                >
+                  <option value="">구 선택</option>
+                  <option value="강남구">강남구</option>
+                  <option value="강동면">강동면</option>
+                  <option value="서종면">서종면</option>
+                </select>
+
+                <input
+                  type="text"
+                  className="search-text-input"
+                  placeholder="프로젝트명 검색"
+                  value={searchText}
+                  onChange={(e) => setSearchText(e.target.value)}
+                />
+
+                <button className="search-btn" onClick={handleSearch}>
+                  🔍
+                </button>
+              </div>
+
+              {showResults && (
+                <div className="search-results">
+                  {searchResults.map((result) => (
+                    <div
+                      key={result.id}
+                      className="search-result-item"
+                      onClick={() => selectProperty(result)}
+                    >
+                      <span className="result-name">{result.name}</span>
+                      <span className="result-details">{result.type} | {result.city} {result.district}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+
         <div className="finance-header">
-          <h2>재무 &gt; 매출</h2>
           <div className="search-controls">
-            <select className="search-select">
-              <option>시 (드릴다운)</option>
-            </select>
-            <select className="search-select">
-              <option>구 (드릴다운)</option>
-            </select>
-            <select className="search-select">
-              <option>프로젝트 전체</option>
-            </select>
             <select className="search-select">
               <option>2023</option>
               <option>2024</option>

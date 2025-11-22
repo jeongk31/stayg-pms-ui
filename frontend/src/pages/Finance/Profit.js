@@ -5,17 +5,7 @@ import './Profit.css';
 const Profit = () => {
   return (
     <div className="finance-page">
-      <div className="finance-nav">
-        <button className="finance-nav-item">매출</button>
-        <button className="finance-nav-item">원가</button>
-        <button className="finance-nav-item active">손익</button>
-        <button className="finance-nav-item">자금 유동성(캐쉬 입금)</button>
-      </div>
-
       <div className="finance-content">
-        <div className="finance-header">
-          <h2>재무 &gt; 손익</h2>
-        </div>
 
         <div className="profit-placeholder">
           <h3>손익 분석</h3>

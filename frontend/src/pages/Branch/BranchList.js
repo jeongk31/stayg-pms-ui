@@ -13,17 +13,8 @@ const BranchList = () => {
 
   return (
     <div className="branch-list">
-      <div className="branch-nav">
-        {categories.map((cat, idx) => (
-          <button key={idx} className={idx === 0 ? 'branch-nav-item active' : 'branch-nav-item'}>
-            {cat}
-          </button>
-        ))}
-      </div>
-
       <div className="content-section">
         <div className="page-header">
-          <h2>지점 &gt; 호텔</h2>
           <div className="search-box">
             <input type="text" placeholder="시" className="search-input" />
             <input type="text" placeholder="구" className="search-input" />

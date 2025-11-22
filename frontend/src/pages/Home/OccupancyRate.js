@@ -17,21 +17,7 @@ const OccupancyRate = () => {
 
   return (
     <div className="dashboard">
-      <div className="dashboard-nav">
-        <Link to="/home/realtime" className="dashboard-nav-item">실시간</Link>
-        <Link to="/home/monthly-revenue" className="dashboard-nav-item">당월 누적매출</Link>
-        <Link to="/home/occupancy" className="dashboard-nav-item active">OCC율</Link>
-      </div>
-
       <div className="content-section">
-        <div className="section-header">
-          <h2>카테고리 &gt; OCC율</h2>
-          <div style={{ display: 'flex', gap: '10px' }}>
-            <Link to="/home/category-by-project" className="export-btn" style={{ textDecoration: 'none', display: 'inline-block' }}>프로젝트별로</Link>
-            <button className="export-btn">출력</button>
-          </div>
-        </div>
-
         <div className="projects-grid">
           {projects.map((project) => (
             <Link key={project.id} to={`/branch/reservation/${project.id}`} className="project-card occ-card">

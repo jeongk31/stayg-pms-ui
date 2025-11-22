@@ -1,8 +1,20 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import './Settings.css';
 
 const Settings = () => {
-  const [activeTab, setActiveTab] = useState('project');
+  const location = useLocation();
+
+  // Determine active tab from route
+  const getActiveTab = () => {
+    if (location.pathname.includes('/settings/room-type')) return 'room';
+    if (location.pathname.includes('/settings/channel')) return 'channel';
+    if (location.pathname.includes('/settings/user')) return 'user';
+    if (location.pathname.includes('/settings/system')) return 'system';
+    return 'project';
+  };
+
+  const [activeTab, setActiveTab] = useState(getActiveTab());
   const [showModal, setShowModal] = useState(false);
   const [modalType, setModalType] = useState(''); // 'add' or 'edit'
   const [editingItem, setEditingItem] = useState(null);
@@ -130,43 +142,15 @@ const Settings = () => {
     alert('삭제되었습니다.');
   };
 
+  // Update activeTab when route changes
+  React.useEffect(() => {
+    setActiveTab(getActiveTab());
+  }, [location.pathname]);
+
   return (
     <div className="settings">
       <div className="settings-header">
         <h2>설정</h2>
-      </div>
-
-      <div className="settings-tabs">
-        <button
-          className={`settings-tab ${activeTab === 'project' ? 'active' : ''}`}
-          onClick={() => setActiveTab('project')}
-        >
-          프로젝트 관리
-        </button>
-        <button
-          className={`settings-tab ${activeTab === 'room' ? 'active' : ''}`}
-          onClick={() => setActiveTab('room')}
-        >
-          객실 타입 관리
-        </button>
-        <button
-          className={`settings-tab ${activeTab === 'channel' ? 'active' : ''}`}
-          onClick={() => setActiveTab('channel')}
-        >
-          채널 관리
-        </button>
-        <button
-          className={`settings-tab ${activeTab === 'user' ? 'active' : ''}`}
-          onClick={() => setActiveTab('user')}
-        >
-          사용자 관리
-        </button>
-        <button
-          className={`settings-tab ${activeTab === 'system' ? 'active' : ''}`}
-          onClick={() => setActiveTab('system')}
-        >
-          시스템 설정
-        </button>
       </div>
 
       <div className="settings-content">

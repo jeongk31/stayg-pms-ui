@@ -15,15 +15,8 @@ const CategoryByProject = () => {
 
   return (
     <div className="dashboard">
-      <div className="dashboard-nav">
-        <Link to="/home/realtime" className="dashboard-nav-item">실시간</Link>
-        <Link to="/home/monthly-revenue" className="dashboard-nav-item">당월 누적매출</Link>
-        <Link to="/home/occupancy" className="dashboard-nav-item">OCC율</Link>
-      </div>
-
       <div className="content-section">
         <div className="page-header">
-          <h2>카테고리 &gt; 프로젝트별로</h2>
           <div className="search-controls">
             <select className="search-select">
               <option>시 (드릴다운)</option>

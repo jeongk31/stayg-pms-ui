@@ -1,7 +1,5 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
-import Dashboard from './pages/Dashboard';
 import RealTime from './pages/Home/RealTime';
 import MonthlyRevenue from './pages/Home/MonthlyRevenue';
 import OccupancyRate from './pages/Home/OccupancyRate';
@@ -26,7 +24,7 @@ function App() {
     <Router>
       <Layout>
         <Routes>
-          <Route path="/" element={<Dashboard />} />
+          <Route path="/" element={<RealTime />} />
           <Route path="/home/realtime" element={<RealTime />} />
           <Route path="/home/monthly-revenue" element={<MonthlyRevenue />} />
           <Route path="/home/occupancy" element={<OccupancyRate />} />
@@ -42,8 +40,14 @@ function App() {
           <Route path="/finance/cash-flow" element={<CashFlow />} />
           <Route path="/assets" element={<AssetManagement />} />
           <Route path="/events/log" element={<EventLog />} />
+          <Route path="/events/user-log" element={<EventLog />} />
           <Route path="/events/cctv" element={<CCTV />} />
           <Route path="/settings" element={<Settings />} />
+          <Route path="/settings/project" element={<Settings />} />
+          <Route path="/settings/room-type" element={<Settings />} />
+          <Route path="/settings/channel" element={<Settings />} />
+          <Route path="/settings/user" element={<Settings />} />
+          <Route path="/settings/system" element={<Settings />} />
         </Routes>
       </Layout>
     </Router>
