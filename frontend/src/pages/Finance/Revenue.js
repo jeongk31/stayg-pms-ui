@@ -223,8 +223,6 @@ const Revenue = () => {
           </button>
         </div>
 
-        <div className="project-name">프로젝트명</div>
-
         <div className="table-container">
           {viewMode === 'yearly' ? (
             <table className="finance-table">

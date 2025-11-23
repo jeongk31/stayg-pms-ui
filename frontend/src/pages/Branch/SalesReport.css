@@ -186,33 +186,41 @@
 
 .sales-tab {
   padding: 10px 20px;
-  border: 2px solid #000;
-  background-color: #fff;
+  border: 1px solid var(--border-medium);
+  border-radius: 4px;
+  background-color: var(--white);
   cursor: pointer;
   font-weight: 600;
-  transition: all 0.3s ease;
+  font-size: 14px;
+  color: var(--text-primary);
+  transition: all 0.2s ease;
 }
 
 .sales-tab:hover {
-  background-color: #f0f0f0;
+  background-color: var(--light-cream);
 }
 
 .sales-tab.active {
-  background-color: #ffeb3b;
+  background-color: rgba(212, 175, 55, 0.2);
+  border-color: var(--accent-gold);
+  color: var(--primary-navy);
 }
 
 .send-btn {
   padding: 10px 20px;
-  background-color: #000;
-  color: #fff;
+  background-color: var(--primary-navy);
+  color: var(--white);
   border: none;
+  border-radius: 4px;
   cursor: pointer;
   font-weight: 600;
+  font-size: 14px;
   margin-left: auto;
+  transition: all 0.2s ease;
 }
 
 .send-btn:hover {
-  background-color: #333;
+  background-color: var(--primary-blue);
 }
 
 .sales-summary {

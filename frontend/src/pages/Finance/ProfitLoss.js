@@ -180,8 +180,6 @@ const ProfitLoss = () => {
           </div>
         </div>
 
-        <div className="project-name">프로젝트명 (드릴다운)</div>
-
         <div className="table-container">
           <table className="finance-table">
             <thead>

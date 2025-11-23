@@ -134,20 +134,6 @@ const SalesReport = () => {
 
           <div className="sales-header">
             <div>
-              <div className="project-filter-section">
-                <label>프로젝트 필터: </label>
-                <select
-                  className="project-filter-select"
-                  value={projectFilter}
-                  onChange={(e) => setProjectFilter(e.target.value)}
-                >
-                  <option value="all">전체 보기</option>
-                  <option value="프로젝트 A">프로젝트 A</option>
-                  <option value="프로젝트 B">프로젝트 B</option>
-                  <option value="프로젝트 C">프로젝트 C</option>
-                </select>
-              </div>
-              <div className="project-name">프로젝트 A - 그랜드 호텔</div>
               <h2>판매/예약 리스트 대시보드</h2>
             </div>
             <div className="header-actions">

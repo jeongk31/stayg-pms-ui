@@ -150,6 +150,11 @@
   margin: 3px 0;
 }
 
+.sales-info strong {
+  margin: 0;
+  padding: 0;
+}
+
 .inventory-info {
   background-color: var(--light-cream);
   padding: 12px 15px;
